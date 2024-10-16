@@ -3,6 +3,23 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+} 
+#quotes {
+    background-color: #fff;
+    border-left: 4px solid #333;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 10px 0;
+}
+
+blockquote footer {
+    text-align: right;
+    font-weight: bold;
+    color: #555;
 }
 
 header {
