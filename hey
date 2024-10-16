@@ -1,1 +1,24 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Emmanuel Ameri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Me</h1>
+    </header>
+    <main>
+    <img src="Preview.png" alt="Non-Research Project 1" class="banner-image">
+        <p>If you'd like to get in touch, please use the following contact information:</p>
+        <ul>
+            <li>Email: <a href="mailto:ad18eame@uwcad.it">ad18eame@uwcad.it</a></li>
+             </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Emmanuel Ameri</p>
+    </footer>
+</body>
+</html>
