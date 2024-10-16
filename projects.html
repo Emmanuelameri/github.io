@@ -1,34 +1,46 @@
-<main>
-    <h2>Projects</h2>
-    
-    <section id="research-projects">
-        <h3>Research Projects</h3>
-        <ul>
-            <li><strong>Implications of Monetary Policy on Fiscal Policy:</strong> An analysis exploring the interactions between monetary and fiscal policies.</li>
-            <li><strong>Comparative Analysis of Zimbabwe and Its Neighbors on Corruption and Governance:</strong> A research paper investigating the impact of governance and corruption on economic growth in Zimbabwe and its neighboring countries.</li>
-            <li><strong>Strategic Approaches to Limiting State Power:</strong> A theoretical exploration of mechanisms to limit state power.</li>
-        </ul>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Emmanuel Ameri</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabName).style.display = 'block';
+        }
+    </script>
+</head>
+<body onload="showTab('research-projects')">
+    <header>
+        <h1>Projects</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="tabs">
+            <button onclick="showTab('research-projects')">Research Projects</button>
+            <button onclick="showTab('non-research-projects')">Non-Research Projects</button>
+        </div>
 
-    <section id="data-projects">
-        <h3>Data Projects</h3>
-        <ul>
-            <li><strong>Sum of Powers Final Project:</strong> A collaborative project focused on data analysis using Python and Jupyter Notebooks.</li>
-            <li><strong>Cross-Country Analysis of Microfinance:</strong> A data analysis project exploring the impact of microfinance on economic development.</li>
-        </ul>
-    </section>
+        <div id="research-projects" class="tab-content">
+            <h2>Research Projects</h2>
+            <div class="project">
+                <h3>Implications of Monetary Policy on Fiscal Policy</h3>
+                <img src="images/research1.jpg" alt="Research Project 1">
+                <p>Description of the project...</p>
+                <p>View on GitHub: <a href="https://github.com/your-username/research1">GitHub Link</a></p>
+            </div>
+            <!-- Add more research projects here -->
+        </div>
 
-    <section id="storytelling-projects">
-        <h3>Storytelling Projects</h3>
-        <ul>
-            <li><strong>An Interactive Story Map on Sámi Culture:</strong> An engaging story map illustrating key themes and insights in my research.</li>
-        </ul>
-    </section>
-
-    <section id="tech-projects">
-        <h3>Tech Projects</h3>
-        <ul>
-            <li><strong>Tech Strategy Visualizations:</strong> A project focused on creating interactive visualizations to communicate tech strategies.</li>
-        </ul>
-    </section>
-</main>
+        <div id="non-research-projects" class="tab-content" style="display: none;">
+            <h2>Non-Research Projects</h2>
+            <div class="project">
+                <h3>Sum of Powers Final Project
