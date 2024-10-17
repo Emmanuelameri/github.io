@@ -47,8 +47,8 @@ main {
 }
 }
 .intext-image {
-    width: 70%;
-    height: 200px;
+    width: 50%;
+    height: 300px;
     object-fit: cover;
     margin-bottom: 10px;
 .tabs {
@@ -81,13 +81,6 @@ main {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.project img {
-    width: 50%;
-    height: 300px;
-    object-fit: cover;
-    margin: 20px auto;
 }
 
 .github-link {
