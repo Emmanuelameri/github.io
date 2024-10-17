@@ -1,12 +1,19 @@
-ear<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> About Summary - Emmanuel Ameri</title>
+    <title>About Summary - Emmanuel Ameri</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabName).style.display = 'block';
+        }
+    </script>
 </head>
-<body>
+<body onload="showTab('current-projects')">
     <header>
         <h1>About Summary</h1>
         <nav>
@@ -14,58 +21,72 @@ ear<!DOCTYPE html>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
-
             </ul>
         </nav>
     </header>
+    
     <main>
-         <h2> 🌱 Current Projects </h2>
-         <h3>Tech Strategy Visualizations</h3>
-    <p>This project involves developing an interactive dashboard using Shiny to visualize technology strategy data. The goal is to create a user-friendly platform that allows stakeholders to explore technology adoption trends, identify areas for improvement, and make informed strategic decisions. The dashboard integrates data from various sources, enabling users to customize their analysis and gain actionable insights.</p>
+        <h2>🌱 Projects Overview</h2>
+        
+        <div class="tabs">
+            <button onclick="showTab('current-projects')">Current Projects</button>
+            <button onclick="showTab('featured-research')">Featured Research Projects</button>
+            <button onclick="showTab('independent-projects')">Featured Independent Projects</button>
+        </div>
 
-    <h4>Key Features:</h4>
-    <ul>
-        <li>Interactive visualizations for real-time data exploration.</li>
-        <li>User inputs to filter and customize data views.</li>
-        <li>Comprehensive analysis of technology adoption trends.</li>
-    </ul>
+        <div id="current-projects" class="tab-content">
+            <h3>Current Projects</h3>
+            <h4>Tech Strategy Visualizations</h4>
+            <p>This project involves developing an interactive dashboard using Shiny to visualize technology strategy data. The goal is to create a user-friendly platform that allows stakeholders to explore technology adoption trends, identify areas for improvement, and make informed strategic decisions. The dashboard integrates data from various sources, enabling users to customize their analysis and gain actionable insights.</p>
+            <h4>Key Features:</h4>
+            <ul>
+                <li>Interactive visualizations for real-time data exploration.</li>
+                <li>User inputs to filter and customize data views.</li>
+                <li>Comprehensive analysis of technology adoption trends.</li>
+            </ul>
 
-    <h3>Cross-Country Analysis of Microfinance</h3>
-    <p>This research paper involves a detailed analysis of microfinance institutions across various countries. The objective is to uncover trends, challenges, and opportunities within the microfinance sector, offering valuable insights for policymakers, investors, and practitioners. By utilizing R for data visualization and statistical modeling, the aim is to identify patterns and correlations in microfinance data.</p>
+            <h4>Cross-Country Analysis of Microfinance</h4>
+            <p>This research paper involves a detailed analysis of microfinance institutions across various countries. The objective is to uncover trends, challenges, and opportunities within the microfinance sector, offering valuable insights for policymakers, investors, and practitioners. By utilizing R for data visualization and statistical modeling, the aim is to identify patterns and correlations in microfinance data.</p>
+            <h4>Key Features:</h4>
+            <ul>
+                <li>Data visualization techniques to highlight relationships between microfinance variables.</li>
+                <li>Statistical modeling to identify factors influencing microfinance success.</li>
+                <li>Trend identification to analyze historical shifts in microfinance practices.</li>
+                <li>Policy recommendations based on data analysis.</li>
+                <li>Stakeholder engagement through interactive data exploration.</li>
+                <li>Comprehensive reports summarizing key findings and recommendations.</li>
+            </ul>
+        </div>
 
-    <h4>Key Features:</h4>
-    <ul>
-        <li>Data visualization techniques to highlight relationships between microfinance variables.</li>
-        <li>Statistical modeling to identify factors influencing microfinance success.</li>
-        <li>Trend identification to analyze historical shifts in microfinance practices.</li>
-        <li>Policy recommendations based on data analysis.</li>
-        <li>Stakeholder engagement through interactive data exploration.</li>
-        <li>Comprehensive reports summarizing key findings and recommendations.</li>
-    </ul>
-         <h2>🔧 Featured Research Projects</h2>
-    <ul>
-        <li>
-            <strong>Implications of Monetary Policy on Fiscal Policy</strong>: This analysis explores the interactions between monetary and fiscal policies, examining how changes in monetary policy can influence government spending and taxation decisions, ultimately impacting economic stability.
-        </li>
-        <li>
-            <strong>Comparative Analysis of Zimbabwe and Its Neighbors on Corruption and Governance</strong>: This research investigates the impact of governance and corruption on economic growth in Zimbabwe and its neighboring countries, highlighting key challenges and proposing strategies for improvement.
-        </li>
-    </ul>
+        <div id="featured-research" class="tab-content" style="display: none;">
+            <h3>Featured Research Projects</h3>
+            <ul>
+                <li>
+                    <strong>Implications of Monetary Policy on Fiscal Policy</strong>: This analysis explores the interactions between monetary and fiscal policies, examining how changes in monetary policy can influence government spending and taxation decisions, ultimately impacting economic stability.
+                </li>
+                <li>
+                    <strong>Comparative Analysis of Zimbabwe and Its Neighbors on Corruption and Governance</strong>: This research investigates the impact of governance and corruption on economic growth in Zimbabwe and its neighboring countries, highlighting key challenges and proposing strategies for improvement.
+                </li>
+            </ul>
+        </div>
 
-    <h2>🌟 Featured Independent and Collaborative Projects</h2>
-    <ul>
-        <li>
-            <strong>Sum of Powers Final Project</strong>: A collaborative project focused on data analysis using Python collab notebooks, where team members explored mathematical concept of sum of powers with applications across various fields, from algebra to number theory, and their applications in real-world scenarios through extensive data manipulation and visualization.
-        </li>
-        <li>
-            <strong>Strategic Approaches to Limiting State Power</strong>: This theoretical exploration examines mechanisms to limit state power, discussing historical and contemporary strategies that can enhance civil liberties and promote democratic governance.
-        </li>
-        <li>
-            <strong>An Interactive Story Map on Sámi Culture</strong>: This engaging story map illustrates key themes and insights related to Sámi culture, showcasing their history, traditions, and contemporary challenges through interactive visual storytelling.
-        </li>
-    </ul>
+        <div id="independent-projects" class="tab-content" style="display: none;">
+            <h3>Featured Independent and Collaborative Projects</h3>
+            <ul>
+                <li>
+                    <strong>Sum of Powers Final Project</strong>: A collaborative project focused on data analysis using Python collab notebooks, where team members explored the mathematical concept of sum of powers with applications across various fields, from algebra to number theory, and their applications in real-world scenarios through extensive data manipulation and visualization.
+                </li>
+                <li>
+                    <strong>Strategic Approaches to Limiting State Power</strong >: This theoretical exploration examines mechanisms to limit state power, discussing historical and contemporary strategies that can enhance civil liberties and promote democratic governance.
+                </li>
+                <li>
+                    <strong>An Interactive Story Map on Sámi Culture</strong>: This engaging story map illustrates key themes and insights related to Sámi culture, showcasing their history, traditions, and contemporary challenges through interactive visual storytelling.
+                </li>
+            </ul>
+        </div>
     </main>
-      <footer>
+
+    <footer>
         <p>"The best way to predict the future is to create it."
 — Peter Drucker </p>
         <p>&copy; 2024 Emmanuel Ameri</p>
