@@ -45,6 +45,17 @@ main {
     justify-content: space-between;
     margin-bottom: 20px;
 }
+}
+.inner-image {
+    width: 70%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
 
 .tabs button {
     background-color: #333;
