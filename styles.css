@@ -46,11 +46,16 @@ main {
     margin-bottom: 20px;
 }
 }
+.image-container {
+    text-align: center; /* Center the images horizontally */
+}
+
 .intext-image {
-    width: 50%;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 10px;
+    display: inline-block; /* Use inline-block for images */
+    margin: 10px; /* Optional: Add space between images */
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
 .tabs {
     display: flex;
     justify-content: space-between;
