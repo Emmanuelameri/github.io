@@ -4,33 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Project</title>
-    
-    <!-- Load PDF.js Library -->
-    <script src="path/to/pdf.js"></script> <!-- Ensure this path is correct -->
-    
+
     <script>
-        function loadPDF(url, canvasId) {
-            const loadingTask = pdfjsLib.getDocument(url);
-            loadingTask.promise.then(pdf => {
-                pdf.getPage(1).then(page => {
-                    const scale = 1.5;
-                    const viewport = page.getViewport({ scale: scale });
-                    const canvas = document.getElementById(canvasId);
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
-
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    page.render(renderContext);
-                });
-            }).catch(error => {
-                console.error('Error loading PDF: ', error);
-            });
-        }
-
         function showTab(tabId) {
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => {
@@ -41,9 +16,27 @@
     </script>
 
     <style>
-        #pdf-viewer {
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        
+        .tabs button {
+            margin: 5px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+        }
+
+        iframe {
             width: 100%;
-            height: 500px;
+            height: 400px;
             border: 1px solid #ccc;
         }
     </style>
@@ -59,188 +52,99 @@
             </ul>
         </nav>
     </header>
-         <main>
-         
-    <div class="tabs">
-        <button onclick="showTab('implications-of-monetary-policy')">Implications of Monetary Policy</button>
-        <button onclick="showTab('comparative-analysis')">Comparative Analysis of Zimbabwe</button>
-        <button onclick="showTab('strategic-approaches')">Strategic Approaches to Limiting State Power</button>
-        <button onclick="showTab('sum-of-powers')">Sum of Powers Final Project</button>
-        <button onclick="showTab('echoes-of-sapmi')">Echoes of Sápmi</button>
-    </div>
+    
+    <main>
+        <div class="tabs">
+            <button onclick="showTab('implications-of-monetary-policy')">Implications of Monetary Policy</button>
+            <button onclick="showTab('comparative-analysis')">Comparative Analysis of Zimbabwe</button>
+            <button onclick="showTab('strategic-approaches')">Strategic Approaches to Limiting State Power</button>
+            <button onclick="showTab('sum-of-powers')">Sum of Powers Final Project</button>
+            <button onclick="showTab('echoes-of-sapmi')">Echoes of Sápmi</button>
+        </div>
 
-    <div id="implications-of-monetary-policy" class="tab-content">
-        <h2>Implications of Monetary Policy on Fiscal Policy</h2>
-        <h3>Abstract</h3>
-        <p>This research paper investigates the implications of monetary policy on fiscal policy, particularly focusing on the effects of interest rate fluctuations on government spending, borrowing costs, and tax revenue. Utilizing a Structural Vector Autoregression (SVAR) model and analyzing data from 1961 to 2023, the study reveals that increases in the federal funds rate lead to higher borrowing costs, which subsequently reduce government spending and contribute to a persistent reliance on deficit budgets. The findings underscore the necessity for policymakers to synchronize monetary and fiscal policies in response to interest rate changes to promote economic stability and growth. Recommendations include diversifying revenue sources and enhancing the efficiency of government spending to mitigate the adverse impacts of rising interest rates.</p>
-       
-        <canvas id="pdf-viewer-implications"></canvas>
-        <script>
-            const urlImplications = 'https://raw.githubusercontent.com/Emmanuelameri/Emmanuelameri/main/Implications%20of%20Monetary%20Policy%20on%20Fiscal%20Policy%20(2).pdf';
-            const loadingTaskImplications = pdfjsLib.getDocument(urlImplications);
-            loadingTaskImplications.promise.then(pdf => {
-                pdf.getPage(1).then(page => {
-                    const scale = 1.5;
-                    const viewport = page.getViewport({ scale: scale });
-                    const canvas = document.getElementById('pdf-viewer-implications');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
+        <div id="implications-of-monetary-policy" class="tab-content">
+            <h2>Implications of Monetary Policy on Fiscal Policy</h2>
+            <h3>Abstract</h3>
+            <p>This research paper investigates the implications of monetary policy on fiscal policy, particularly focusing on the effects of interest rate fluctuations on government spending, borrowing costs, and tax revenue. Utilizing a Structural Vector Autoregression (SVAR) model and analyzing data from 1961 to 2023, the study reveals that increases in the federal funds rate lead to higher borrowing costs, which subsequently reduce government spending and contribute to a persistent reliance on deficit budgets. The findings underscore the necessity for policymakers to synchronize monetary and fiscal policies in response to interest rate changes to promote economic stability and growth. Recommendations include diversifying revenue sources and enhancing the efficiency of government spending to mitigate the adverse impacts of rising interest rates.</p>
+        </div>
 
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    page.render(renderContext);
-                });
-            });
-        </script>
-    </div>
+        <div id="comparative-analysis" class="tab-content">
+            <h2>Comparative Analysis of Zimbabwe and Its Neighbors on Corruption and Governance</h2>
+            <h3>Abstract</h3>
+            <p>This paper examines the detrimental impact of corruption and poor governance on Zimbabwe's economic growth, with a particular focus on the agricultural sector and the Marange diamond scandal. Corruption has severely hindered Zimbabwe's GDP, leading to inefficiencies in public works and social programs.</p>
+            <h3>PDF Preview</h3>
+            <iframe src="A Comparative Analysis of Zimbabwe and Its Neighbors on Corruption and Governance on Economic Growth.pdf"></iframe>
+        </div>
 
-    <div id="comparative-analysis" class="tab-content" style="display: none;">
-        <h2>Comparative Analysis of Zimbabwe and Its Neighbors on Corruption and Governance</h2>
-        <h3>Abstract</h3>
-        <p>This paper examines the detrimental impact of corruption and poor governance on Zimbabwe's economic growth, with a particular focus on the agricultural sector and the Marange diamond scandal. Corruption has severely hindered Zimbabwe's GDP, leading to inefficiencies in public works and social programs. Despite having a workforce predominantly engaged in agriculture, the sector has been undermined by mismanagement and lack of accountability. The study highlights the Command Agriculture Program's potential to stimulate productivity through targeted interventions, such as improving irrigation, transportation, and energy infrastructure, while also enhancing financial access for farmers. By implementing these reforms, Zimbabwe can address its fundamental challenges, increase agricultural productivity, and foster overall economic growth. The paper advocates for a comprehensive approach that includes public-private partnerships and investment in renewable energy to ensure sustainable agricultural development. Ultimately, the findings underscore the necessity of transparency and effective governance to unlock Zimbabwe's economic potential and promote a more democratic society.</p>
-        <canvas id="pdf-viewer-comparative"></canvas>
-        <script>
-            const urlComparative = 'https://raw.githubusercontent.com/Emmanuelameri/Emmanuelameri/main/A%20Comparative%20Analysis%20of%20Zimbabwe%20and%20Its%20Neighbors%20on%20Corruption%20and%20Governance%20on%20Economic%20Growth.pdf';
-            const loadingTaskComparative = pdfjsLib.getDocument(urlComparative);
-            loadingTaskComparative.promise.then(pdf => {
-                pdf.getPage(1).then(page => {
-                    const scale = 1.5;
-                    const viewport = page.getViewport({ scale: scale });
-                    const canvas = document.getElementById('pdf-viewer-comparative');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
+        <div id="strategic-approaches" class="tab-content">
+            <h2>Strategic Approaches to Limiting State Power</h2>
+            <h3>Abstract</h3>
+            <p>This paper explores the theoretical frameworks and practical strategies for limiting state power, emphasizing the delicate balance between governance and individual rights. Drawing on James Buchanan's public choice theory and Thomas Hobbes' concept of the Leviathan, the analysis highlights the inherent tensions between state authority and personal freedoms.</p>
+            <h3>PDF Preview</h3>
+            <iframe src="Strategic Approaches to Limiting State Power Theoretical Insights and Practical Solutions.pdf"></iframe>
+        </div>
 
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    page.render(renderContext);
-                });
-            });
-        </script>
-    </div>
-               <div id="sum-of-powers" class="tab-content" style="display: none;">
-              
-            
-            <h2><strong><a href="https://colab.research.google.com/github/Emmanuelameri/Emmanuelameri/blob/main/George%2C_Jonah%2C_Laura%2C_Emmanuel_Sum_of_Powers_Final_Project.ipynb">Sum of Powers Final Project </a></strong>
-        </h2>
-        <h3>Abstract</h3>
-        <p>This project investigates the sums of powers of consecutive integers, aiming to validate the results of Ho, Mellblom, and Frodyma regarding their theories. A generalized function was developed to verify these identities, focusing on patterns, conjectures, and counterexamples related to the sum of powers. The project validates several identities, including the divisibility of sums involving odd positive integers and the non-divisibility of sums where one integer is even and the other is an odd prime. Further explorations reveal trends in remainders when both integers are manipulated as odd or even, and the implications of these findings are discussed. Key questions addressed include the characterization of integer values for divisibility, the effects of changing integer parity, and the identification of specific values leading to consistent remainder patterns. The results highlight the complexities of integer sums and their properties, contributing to a deeper understanding of number theory.</p>
-        <h3>Applications Beyond the Classroom</h3>
-    <p>The study of sums of powers has several practical applications outside of traditional mathematics classes:</p>
-    <ul>
-        <li><strong>Computer Science:</strong> Sums of powers are used in algorithm analysis, particularly in understanding the time complexity of algorithms. For example, the sum of squares can help analyze the performance of certain sorting algorithms.</li>
-        <li><strong>Physics:</strong> In physics, sums of powers can be applied in various fields, such as quantum mechanics and statistical mechanics, where they help in calculating probabilities and expected values.</li>
-        <li><strong>Finance:</strong> In financial modeling, sums of powers can be used to calculate compound interest and analyze investment growth over time, providing insights into the effects of different interest rates.</li>
-        <li><strong>Data Science:</strong> In data analysis, sums of powers can be useful for regression analysis and curve fitting, helping to model relationships between variables and make predictions based on historical data.</li>
-        <li><strong>Cryptography:</strong> Some cryptographic algorithms utilize properties of sums of powers to enhance security, particularly in generating keys and encrypting data.</li>
-        <li><strong>Game Theory:</strong> In game theory, sums of powers can be used to analyze strategies and outcomes in competitive situations, providing a mathematical framework for decision-making.</li>
-    </ul>
-         </div>
-               <div id="strategic-approaches" class="tab-content" style="display: none;">
-        <h2>Strategic Approaches to Limiting State Power</h2>
-        <h3>Abstract</h3>
-        <p>This paper explores the theoretical frameworks and practical strategies for limiting state power, emphasizing the delicate balance between governance and individual rights. Drawing on James Buchanan's public choice theory and Thomas Hobbes' concept of the Leviathan, the analysis highlights the inherent tensions between state authority and personal freedoms. It argues that while a strong state is essential for maintaining order and protecting rights, unchecked power can lead to tyranny and the erosion of civil liberties.</p>
-        <canvas id="pdf-viewer-strategic-approaches"></canvas>
-        <script>
-            const urlStrategicApproaches = 'Strategic Approaches to Limiting State Power_ Theoretical Insights and Practical Solutions.pdf';
-            const loadingTaskStrategicApproaches = pdfjsLib.getDocument(urlStrategicApproaches);
-            loadingTaskStrategicApproaches.promise.then(pdf => {
-                pdf.getPage(1).then(page => {
-                    const scale = 1.5;
-                    const viewport = page .getViewport({ scale: scale });
-                    const canvas = document.getElementById('pdf-viewer-strategic-approaches');
-                    const context = canvas.getContext('2d');
-                    canvas.height = viewport.height;
-                    canvas.width = viewport.width;
+        <div id="sum-of-powers" class="tab-content">
+            <h2>Sum of Powers Final Project</h2>
+            <h3>Abstract</h3>
+            <p>This project investigates the sums of powers of consecutive integers, aiming to validate the results of Ho, Mellblom, and Frodyma regarding their theories. A generalized function was developed to verify these identities, focusing on patterns, conjectures, and counterexamples related to the sum of powers.</p>
+            <h3>Applications Beyond the Classroom</h3>
+            <ul>
+                <li><strong>Computer Science:</strong> Sums of powers are used in algorithm analysis, particularly in understanding the time complexity of algorithms.</li>
+                <li><strong>Physics:</strong> In physics, sums of powers can be applied in various fields, such as quantum mechanics and statistical mechanics, where they help in calculating probabilities and expected values.</li>
+                <li><strong>Finance:</strong> In financial modeling, sums of powers can be used to calculate compound interest and analyze investment growth over time, providing insights into the effects of different interest rates.</li>
+                <li><strong>Data Science:</strong> In data analysis, sums of powers can be useful for regression analysis and curve fitting, helping to model relationships between variables and make predictions based on historical data.</li>
+                <li><strong>Cryptography:</strong> Some cryptographic algorithms utilize properties of sums of powers to enhance security, particularly in generating keys and encrypting data.</li>
+                <li><strong>Game Theory:</strong> In game theory, sums of powers can be used to analyze strategies and outcomes in competitive situations, providing a mathematical framework for decision-making.</li>
+            </ul>
+        </div>
 
-                    const renderContext = {
-                        canvasContext: context,
-                        viewport: viewport
-                    };
-                    page.render(renderContext);
-                });
-            });
-        </script>
-    </div>
+        <div id="echoes-of-sapmi" class="tab-content">
+            <h2>Echoes of Sápmi</h2>
+            <title>Summary of Echoes Across Sápmi</title>
+            <h2>Overview:</h2>
+            <p>"Echoes Across Sápmi" explores the historical significance and journeys of Sámi drums, sacred objects integral to Sámi culture and spirituality.</p>
+            <ul>
+                <li><strong><a href="https://storymaps.arcgis.com/stories/79ef3fb66e4b491fa7216ccc13787f6b?play=true&speed=medium">An Interactive Story Map on Sámi Culture</a></strong>: An engaging story map illustrating key themes and insights in my research.</li>
+            </ul>
+            <h2>Key Themes:</h2>
+            <h3>1. Cultural Significance of Sámi Drums:</h3>
+            <ul>
+                <li>Drums were vital in Sámi spirituality and community life.</li>
+                <li>They served as a connection to ancient traditions and history.</li>
+            </ul>
+            <h3>2. Historical Displacement:</h3>
+            <ul>
+                <li>Many Sámi drums were taken during colonial times and are now housed in European museums, often disconnected from their cultural context.</li>
+                <li>Notable examples include a drum presented to the British Museum and another confiscated during witch hunts in Norway.</li>
+            </ul>
+            <h3>3. Calls for Repatriation:</h3>
+            <ul>
+                <li>Thousands of Sámi objects, including sacred drums, are scattered across museums, lacking proper documentation.</li>
+                <li>Recent efforts have been made to repatriate these items and foster cooperation between Sámi and European museums.</li>
+            </ul>
+            <h3>4. Resilience and Cultural Revival:</h3>
+            <ul>
+                <li>The journey of a seventeenth-century Sámi drum illustrates the resilience of Sámi culture.</li>
+                <li>Contemporary Sámi artisans, like Helge Sunna and Gunvor Guttorm, are revitalizing traditional craftsmanship, showcasing the enduring spirit of Sámi identity.</li>
+            </ul>
+            <h3>5. Historical Context of Drum Dispersal:</h3>
+            <ul>
+                <li>The Museum Schefferianum in Uppsala was one of the first museums to collect Sámi artifacts, including drums, which were later dispersed to royal collections and museums across Europe.</li>
+                < li>The narrative includes the journey of the Freavnantjahke gievrie drum, highlighting its significance and the impact of colonialism on Sámi culture.</li>
+            </ul>
+            <h3>6. Conclusion:</h3>
+            <p>The journey of Sámi drums reflects the complex interplay of history, identity, and cultural heritage. The author emphasizes the importance of preserving indigenous cultures and fostering respect and cooperation between communities and museums.</p>
+            <h2>Credits:</h2>
+            <p>The work cites various sources, including museums, academic references, and historical accounts, to support its exploration of Sámi cultural heritage and the significance of repatriation efforts.</p>
+            <img src="Sámi.png" alt="Non-Research Project 1" class="intext-image">
+            <img src="Sami" alt="Non-Research Project 1" class="intext-image">
+        </div>
+    </main>
 
-
-  
-      <div id="echoes-of-sapmi" class="tab-content" style="display: none;">
-        <h2>Echoes of Sápmi</h2>
-        <title>Summary of Echoes Across Sápmi</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
-                margin: 20px;
-            }
-            h1, h2, h3 {
-                color: #2c3e50;
-            }
-            p {
-                margin: 10px 0;
-            }
-        </style>
-       
-        <h2>Overview:</h2>
-        <p>"Echoes Across Sápmi" explores the historical significance and journeys of Sámi drums, sacred objects integral to Sámi culture and spirituality. The author, Emmanuel Ameri, aims to uncover the socio-cultural and historical contexts surrounding these drums, which were used by noaidis (Sámi religious leaders) for healing, divination, and community harmony.</p>
-
-        <ul>
-            <li><strong><a href="https://storymaps.arcgis.com/stories/79ef3fb66e4b491fa7216ccc13787f6b?play=true&speed=medium">An Interactive Story Map on Sámi Culture</a></strong>: An engaging story map illustrating key themes and insights in my research.</li>
-        </ul>
-
-        <h2>Key Themes:</h2>
-
-        <h3>1. Cultural Significance of Sámi Drums:</h3>
-        <ul>
-            <li>Drums were vital in Sámi spirituality and community life.</li>
-            <li>They served as a connection to ancient traditions and history.</li>
-        </ul>
-
-        <h3>2. Historical Displacement:</h3>
-        <ul>
-            <li>Many Sámi drums were taken during colonial times and are now housed in European museums, often disconnected from their cultural context.</li>
-            <li>Notable examples include a drum presented to the British Museum and another confiscated during witch hunts in Norway.</li>
-        </ul>
-
-        <h3>3. Calls for Repatriation:</h3>
-        <ul>
-            <li>Thousands of Sámi objects, including sacred drums, are scattered across museums, lacking proper documentation.</li>
-            <li>Recent efforts have been made to repatriate these items and foster cooperation between Sámi and European museums.</li>
-        </ul>
-
-        <h3>4. Resilience and Cultural Revival:</h3>
-        <ul>
-            <li>The journey of a seventeenth-century Sámi drum illustrates the resilience of Sámi culture.</li>
-            <li>Contemporary Sámi artisans, like Helge Sunna and Gunvor Guttorm, are revitalizing traditional craftsmanship, showcasing the enduring spirit of Sámi identity.</li>
-        </ul>
-
-        <h3>5. Historical Context of Drum Dispersal:</h3>
-        <ul>
-            <li>The Museum Schefferianum in Uppsala was one of the first museums to collect Sámi artifacts, including drums, which were later dispersed to royal collections and museums across Europe.</li>
-            <li>The narrative includes the journey of the Freavnantjahke gievrie drum, highlighting its significance and the impact of colonialism on Sámi culture.</li>
-        </ul>
-
-        <h3>6. Conclusion:</h3>
-        <p>The journey of Sámi drums reflects the complex interplay of history, identity, and cultural heritage. The author emphasizes the importance of preserving indigenous cultures and fostering respect and cooperation between communities and museums.</p>
-
-        <h2>Credits:</h2>
-        <p>The work cites various sources, including museums, academic references, and historical accounts, to support its exploration of Sámi cultural heritage and the significance of repatriation efforts.</p>
-
-        <img src="Sámi.png" alt="Non-Research Project 1" class="intext-image">
-        <img src="Sami" alt="Non-Research Project 1" class="intext-image">
-
-         </div>
-</main>
-
-<footer>
-    <p>"The measure of intelligence is the ability to change."— Albert Einstein</p>
-    <p>&copy; 2024 Emmanuel Ameri</p>
-</footer>
+    <footer>
+        <p>"The measure of intelligence is the ability to change."— Albert Einstein</p>
+        <p>&copy; 2024 Emmanuel Ameri</p>
+    </footer>
 </body>
 </html>
