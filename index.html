@@ -3,7 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Ameri - Portfolio</title><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emmanuel Ameri - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.style.display = 'none';
+            });
+            document.getElementById(tabId).style.display = 'block';
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4; /* Light background for better contrast */
+        }
+
+        header {
+            background-color: #333; /* Dark background for header */
+            color: #fff; /* White text for contrast */
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none; /* Remove default list styling */
+            margin: 0;
+            padding: 0;
+            display: flex; /* Flexbox for horizontal layout */
+            justify-content: center; /* Center align navigation items */
+        }
+
+        nav li {
+            margin-right: 20px; /* Space between navigation items */
+        }
+
+        nav a {
+            color: #fff; /* White text for links */
+            text-decoration: none; /* Remove underline from links */
+        }
+
+        main {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center align items */
+            padding: 20px;
+        }
+
+        .banner-image {
+            width: 100%; /* Full width */
+            height: 300px; /* Fixed height */
+            object-fit: cover; /* Cover the area without distortion */
+            margin-bottom: 20px; /* Space below the banner */
+        }
+
+        .tabs {
+            display: flex; /* Flexbox for horizontal layout */
+            justify-content: center; /* Center align tabs */
+            margin-bottom: 20px; /* Space below tabs */
+        }
+
+        .tabs button {
+            background-color: #333; /* Dark background for buttons */
+            color: #fff; /* White text for buttons */
+            border: none; /* Remove default border */
+            padding: 10px 20px; /* Padding for buttons */
+            font-size: 16px; /* Font size for buttons */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+            margin: 0 5px; /* Space between buttons */
+        }
+
+        .tabs button:hover {
+            background-color: #444; /* Darker background on hover */
+        }
+
+        .tab-content {
+            display: none; /* Hidden by default */
+            padding: 20px; /* Padding for content */
+            background-color: #fff; /* White background for content */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            width: 100%; /* Full width */
+            max-width: 800px; /* Max width for content */
+        }
+
+        h2, h3 {
+            color: #2c3e50; /* Dark color for headings */
+        }
+
+        iframe {
+            width: 100%; /* Full width */
+            height: 800px; /* Fixed height */
+            border: 1px solid #ccc; /* Border for iframe */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        footer {
+            text-align: center; /* Center align footer text */
+            margin-top: 20px; /* Space above footer */
+            font-size: 0.9em; /* Smaller font size */
+            color: #7f8c8d; /* Gray color for footer text */
+        }
+    </style>
+</head>
+<body onload="showTab('current-projects')">
+    <header>
+        <h1>Hello, I am Emmanuel Ameri</h1>
+        <p>Finance Enthusiast | Researcher | Data Analyst | Entrepreneur</p>
+        <nav>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <img src="Sámi.png" alt="Sámi Cultural Representation" class="banner-image">
+        <h2>Welcome to My Portfolio</h2>
+        <h2>🌱 Projects Overview</h2>
+
+        <div class="tabs">
+            <button onclick="showTab('current-projects')">Current Projects</button>
+            <button onclick="showTab('featured-research')">Featured Research Projects</button>
+            <button onclick="showTab('independent-projects')">Featured Independent Projects</button>
+        </div>
+
+        <div id="current-projects" class="tab-content">
+            <h3>Current Projects</h3>
+            <h4>Cross-Country Analysis of Microfinance</h4>
+            <p>This research paper involves a detailed analysis of microfinance institutions across various countries...</p>
+            <h4>Key Features:</h4>
+            <ul>
+                <li>Data visualization techniques to highlight relationships between microfinance variables.</li>
+                <li>Statistical modeling to identify factors influencing microfinance success.</li>
+                <li>Trend identification to analyze historical shifts in microfinance practices.</li>
+                <li>Policy recommendations based on data analysis.</li>
+            </ul>
+        </div>
+
+        <div id="featured-research" class="tab-content" style="display: none;">
+            <h3>Featured Research Projects</h3>
+            <ul>
+                <li>
+                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Implications of Monetary Policy on Fiscal Policy</a></strong>: This analysis explores the interactions between monetary and fiscal policies...
+                </li>
+                <li>
+                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Comparative Analysis of Zimbabwe and Its Neighbors on Corruption and Governance</a></strong>: This research investigates the impact of governance and corruption on economic growth...
+                </li>
+            </ul>
+        </div>
+
+        <div id="independent-projects" class="tab-content" style="display: none;">
+            <h3>Featured Independent and Collaborative Projects</h3>
+            <ul>
+                <li>
+                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Comprehensive Analysis of Key Metrics</a></strong>: The dashboard aims to empower users by providing insightful visualizations that facilitate data exploration and analysis...
+                </li> 
+                <li>
+                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Retail Sales Power BI Sample</a></strong>: This interactive Power BI dashboard provides a comprehensive overview of retail sales performance, showcasing key metrics, trends, and insights to help drive business decisions...
+                </li>
+                <li>
+                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Sum of Powers Final Project</a></strong>: A collaborative project focused on data analysis using Python collab notebooks...
+                </li>
+                <li>
+                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Strategic Approaches to Limiting State Power</a></strong>: This theoretical exploration examines mechanisms to limit state power...
+                </li>
+                <li>
+                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">An Interactive Story Map on Sámi Culture</a></strong>: This engaging story map illustrates key themes and insights related to Sámi culture...
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>"The best way to predict the future is to create it." — Peter Drucker</p>
+        <p>&copy; 2024 Emmanuel Ameri</p>
+    </footer>
+</body>
+</html>
+
     <link rel="stylesheet" href="styles.css">
     <script>
         function showTab(tabId) {
