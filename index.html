@@ -16,128 +16,114 @@
     </script>
     <style>
         body {
-            font-family: 'Georgia', serif; /* More formal font */
+            font-family: 'Georgia', serif;
             margin: 0;
             line-height: 1.6;
-            background-color: #f9f9f9; /* Light background for better contrast */
-            color: #333; /* Dark text for readability */
+            background-color: #f9f9f9;
+            color: #333;
         }
 
         header {
-            background-color: #004d00; /* Dark green for header */
-            color: #fff; /* White text for contrast */
+            background-color: #004d00;
+            color: #fff;
             padding: 20px;
             text-align: center;
         }
 
         nav ul {
-            list-style: none; /* Remove default list styling */
+            list-style: none;
             margin: 0;
             padding: 0;
-            display: flex; /* Flexbox for horizontal layout */
-            justify-content: center; /* Center align navigation items */
+            display: flex;
+            justify-content: center;
         }
 
         nav li {
-            margin-right: 20px; /* Space between navigation items */
+            margin-right: 20px;
         }
 
         nav a {
-            color: #fff; /* White text for links */
-            text-decoration: none; /* Remove underline from links */
-            font-weight: bold; /* Bold links for emphasis */
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         main {
             display: flex;
-            flex-direction: column; /* Stack elements vertically */
-            align-items: center; /* Center align items */
-            padding: 40px 20px; /* More padding for a spacious feel */
-        }
-
-        .banner-image {
-            width: 100%; /* Full width */
-            height: 300px; /* Fixed height */
-            object-fit: cover; /* Cover the area without distortion */
-            margin-bottom: 20px; /* Space below the banner */
-            border-radius: 5px; /* Rounded corners */
-        }
-
-        h2, h3 {
-            color: #004d00; /* Dark green for headings */
-            margin: 20px 0; /* Space above and below headings */
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
         }
 
         .tabs {
-            display: flex; /* Flexbox for horizontal layout */
-            justify-content: center; /* Center align tabs */
-            margin-bottom: 20px; /* Space below tabs */
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
         }
 
         .tabs button {
-            background-color: #004d00; /* Dark green for buttons */
-            color: #fff; /* White text for buttons */
-            border: none; /* Remove default border */
-            padding: 10px 20px; /* Padding for buttons */
-            font-size: 16px; /* Font size for buttons */
-            cursor: pointer; /* Pointer cursor on hover */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s; /* Smooth transition for hover effect */
-            margin: 0 5px; /* Space between buttons */
+            background-color: #004d00;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 0 5px;
         }
 
         .tabs button:hover {
-            background-color: #005700; /* Slightly lighter green on hover */
+            background-color: #005700;
         }
 
         .tab-content {
-            display: none; /* Hidden by default */
-            padding: 20px; /* Padding for content */
-            background-color: #fff; /* White background for content */
-            border-radius: 5px; /* Rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            width: 100%; /* Full width */
-            max-width: 800px; /* Max width for content */
-        }
-
-        ul {
-            list-style-type: disc; /* Bullet points for lists */
-            margin-left: 20px; /* Indent for lists */
+            display: none;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
         }
 
         footer {
-            text-align: center; /* Center align footer text */
-            margin-top: 40px; /* Space above footer */
-            font-size: 0.9em; /* Smaller font size */
-            color: #7f8c8d; /* Gray color for footer text */
-            padding: 20px; /* Padding for footer */
-            background-color: #eaeaea; /* Light gray background for footer */
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            padding: 20px;
+            background-color: #eaeaea;
         }
     </style>
 </head>
-<body onload="showTab('current-projects')">
+<body onload="showTab('home')">
     <header>
         <h1>Emmanuel Ameri</h1>
         <p>Finance Enthusiast | Researcher | Data Analyst | Entrepreneur</p>
         <nav>
             <ul>
-                <li><a href="projects.html"> Current Projects</a></li>
-                <li><a href=""> Featured-Research</a></li>
-                <li><a href=""> Independent-Projects</a></li>
-                
+                <li><a href="#" onclick="showTab('home')">Home</a></li>
+                <li><a href="#" onclick="showTab('current-projects')">Current Projects</a></li>
+                <li><a href="#" onclick="showTab('featured-research')">Featured Research</a></li>
+                <li><a href="#" onclick="showTab('independent-projects')">Independent Projects</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <img src="Research.jpg" alt="Portfolio" class="banner-image">
-        <h2>Welcome to My Portfolio</h2>
+        <div id="home" class="tab-content">
+            <h2>Welcome to My Portfolio</h2>
+            <p>This portfolio showcases my work as a finance enthusiast, researcher, data analyst, and entrepreneur. Here, you will find a collection of my current projects, featured research, and independent projects that highlight my skills and interests in the field.</p>
+            <img src="Research.jpg" alt="Portfolio" class="banner-image">
+        </div>
+
         <h2>🌱 Projects Overview</h2>
 
         <div class="tabs">
             <button onclick="showTab('current-projects')">Current Projects</button>
             <button onclick="showTab('featured-research')">Featured Research Projects</button>
-            <button onclick="showTab('independent-projects')">Featured Independent Projects</button>
+            <button onclick="showTab('independent-projects')">Independent Projects</button>
         </div>
 
         <div id="current-projects" class="tab-content">
@@ -166,13 +152,13 @@
         </div>
 
         <div id="independent-projects" class="tab-content" style="display: none;">
-            <h3>Featured Independent and Collaborative Projects</h3>
+            <h3>Featured Independent Projects</h3>
             <ul>
                 <li>
                     <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Comprehensive Analysis of Key Metrics</a></strong>: The dashboard aims to empower users by providing insightful visualizations that facilitate data exploration and analysis...
-                </li> 
+                </li>
                 <li>
-                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Retail Sales Power BI Sample</a></strong>: This interactive Power BI dashboard provides a comprehensive overview of retail sales performance, showcasing key metrics, trends, and insights to help drive business decisions...
+                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Retail Sales Power BI Sample</a></strong>: This interactive Power BI dashboard provides a comprehensive overview of retail sales performance...
                 </li>
                 <li>
                     <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Sum of Powers Final Project</a></strong>: A collaborative project focused on data analysis using Python collab notebooks...
