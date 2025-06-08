@@ -1,110 +1,72 @@
-/* General Body Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    line-height: 1.6;
-    background-color: #f4f4f4; /* Light background for better contrast */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Ameri - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabId).style.display = 'block';
 
-/* Header Styles */
-header {
-    background-color: #333; /* Dark background for header */
-    color: #fff; /* White text for contrast */
-    padding: 20px;
-    text-align: center;
-}
+            const buttons = document.querySelectorAll('.tabs button');
+            buttons.forEach(button => button.classList.remove('active'));
+            document.querySelector(`button[data-tab="${tabId}"]`).classList.add('active');
+        }
 
-/* Navigation Styles */
-nav ul {
-    list-style: none; /* Remove default list styling */
-    margin: 0;
-    padding: 0;
-    display: flex; /* Flexbox for horizontal layout */
-    justify-content: space-between; /* Space between items */
-}
+        window.onload = function () {
+            showTab('home'); // Show home tab by default
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Emmanuel Ameri</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showTab('home')">Home</a></li>
+                <li><a href="#" onclick="showTab('projects')">Projects</a></li>
+                <li><a href="#" onclick="showTab('featured-research')">Featured Research</a></li>
+                <li><a href="#" onclick="showTab('independent-projects')">Independent Projects</a></li>
+            </ul>
+        </nav>
+    </header>
 
-nav li {
-    margin-right: 20px; /* Space between navigation items */
-}
+    <main>
+        <div id="home" class="tab-content">
+            <h2>Welcome to My Portfolio</h2>
+            <p>This portfolio showcases my work as a finance enthusiast, researcher, data analyst, and entrepreneur.</p>
+        </div>
 
-nav a {
-    color: #fff; /* White text for links */
-    text-decoration: none; /* Remove underline from links */
-}
+        <div id="projects" class="tab-content">
+            <h2>Projects Overview</h2>
+            <div class="tabs">
+                <button data-tab="current-projects" onclick="showTab('current-projects')">Current Projects</button>
+                <button data-tab="featured-research" onclick="showTab('featured-research')">Featured Research</button>
+                <button data-tab="independent-projects" onclick="showTab('independent-projects')">Independent Projects</button>
+            </div>
 
-/* Main Content Styles */
-main {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center align items */
-    padding: 20px;
-}
+            <div id="current-projects" class="tab-content">
+                <h3>Current Projects</h3>
+                <p>Details about current projects...</p>
+            </div>
 
-/* Banner Image Styles */
-.banner-image {
-    width: 100%; /* Full width */
-    height: 300px; /* Fixed height */
-    object-fit: cover; /* Cover the area without distortion */
-    margin-bottom: 20px; /* Space below the banner */
-}
+            <div id="featured-research" class="tab-content">
+                <h3>Featured Research Projects</h3>
+                <p>Details about featured research...</p>
+            </div>
 
-/* Tab Styles */
-.tabs {
-    display: flex; /* Flexbox for horizontal layout */
-    justify-content: space-between; /* Space between buttons */
-    margin-bottom: 20px; /* Space below tabs */
-}
+            <div id="independent-projects" class="tab-content">
+                <h3>Independent Projects</h3>
+                <p>Details about independent projects...</p>
+            </div>
+        </div>
+    </main>
 
-.tabs button {
-    background-color: #333; /* Dark background for buttons */
-    color: #fff; /* White text for buttons */
-    border: none; /* Remove default border */
-    padding: 10px 20px; /* Padding for buttons */
-    font-size: 16px; /* Font size for buttons */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.tabs button:hover {
-    background-color: #444; /* Darker background on hover */
-}
-
-/* Tab Content Styles */
-.tab-content {
-    display: none; /* Hidden by default */
-    padding: 20px; /* Padding for content */
-    background-color: #fff; /* White background for content */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Project Styles */
-.project {
-    margin-bottom: 20px; /* Space below each project */
-    padding: 20px; /* Padding for project container */
-    border: 1px solid #fff; /* White border */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* GitHub Link Styles */
-.github-link {
-    font-size: 18px; /* Font size for GitHub links */
-    font-weight: bold; /* Bold text */
-    color: #337ab7; /* Bootstrap primary color */
-    text-decoration: none; /* Remove underline */
-}
-
-/* Image Container Styles */
-.image-container {
-    text-align: center; /* Center align images */
-}
-
-/* In-Text Image Styles */
-.intext-image {
-    display: inline-block; /* Inline block for images */
-    margin: 10px; /* Space around images */
-    max-width: 70%; /* Responsive max width */
-    height: auto; /* Maintain aspect ratio */
-}
+    <footer>
+        <p>&copy; 2024 Emmanuel Ameri</p>
+    </footer>
+</body>
+</html>
