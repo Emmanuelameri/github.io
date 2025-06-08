@@ -1,101 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emmanuel Ameri - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => {
-                tab.style.display = 'none';
-            });
-            document.getElementById(tabId).style.display = 'block';
-        }
-    </script>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            margin: 0;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmanuel Ameri - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
-        header {
-            background-color: #004d00;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
+    header {
+      background-color: #004d00;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
 
-        nav li {
-            margin-right: 20px;
-        }
+    nav li {
+      margin-right: 20px;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
 
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+    .sub-tabs {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 10px;
+    }
 
-        .tabs button {
-            background-color: #004d00;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            margin: 0 5px;
-        }
+    .sub-tabs button {
+      background-color: #004d00;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
 
-        .tabs button:hover {
-            background-color: #005700;
-        }
+    .sub-tabs button:hover {
+      background-color: #005700;
+    }
 
-        .tab-content {
-            display: none;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 800px;
-        }
+    .tab-content, .sub-tab-content {
+      display: none;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 800px;
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #7f8c8d;
-            padding: 20px;
-            background-color: #eaeaea;
-        }
-     <script>
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #7f8c8d;
+      padding: 20px;
+      background-color: #eaeaea;
+    }
+
+    .banner-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+
+  <script>
     function showTab(tabId) {
       const tabs = document.querySelectorAll('.tab-content');
       tabs.forEach(tab => tab.style.display = 'none');
@@ -107,8 +107,12 @@
       subTabs.forEach(subTab => subTab.style.display = 'none');
       document.getElementById(subTabId).style.display = 'block';
     }
+
+    window.onload = function () {
+      showTab('home');
+      showSubTab('current-projects'); // show first sub-tab by default
+    };
   </script>
-    </style>
 </head>
 <body onload="showTab('home')">
     <header>
@@ -119,7 +123,7 @@
                 <li><a href="#" onclick="showTab('home')">Home</a></li>
                 <li><a href="projects.html" onclick="showTab('current-projects')">Current Projects</a></li>
                 <li><a href="featured.html" onclick="showTab('featured-research')">Featured Research</a></li>
-                <li><a href="independent.html" onclick="showTab('independent-projects')">Independent Projects</a></li>
+                <li><a href="independet.html" onclick="showTab('independent-projects')">Independent Projects</a></li>
             </ul>
         </nav>
     </header>
@@ -140,51 +144,41 @@
          </div>
 
         <div id="current-projects" class="sub-tab-content">
-            <h3>Current Projects</h3>
-            <h4>Cross-Country Analysis of Microfinance</h4>
-            <p>This research paper involves a detailed analysis of microfinance institutions across various countries...</p>
-            <h4>Key Features:</h4>
-            <ul>
-                <li>Data visualization techniques to highlight relationships between microfinance variables.</li>
-                <li>Statistical modeling to identify factors influencing microfinance success.</li>
-                <li>Trend identification to analyze historical shifts in microfinance practices.</li>
-                <li>Policy recommendations based on data analysis.</li>
-            </ul>
-        </div>
+       <div id="current-projects" class="sub-tab-content">
+        <h3>Current Projects</h3>
+        <h4>Cross-Country Analysis of Microfinance</h4>
+        <p>This research paper involves a detailed analysis of microfinance institutions across various countries...</p>
+        <h4>Key Features:</h4>
+        <ul>
+          <li>Data visualization techniques to highlight relationships between microfinance variables.</li>
+          <li>Statistical modeling to identify factors influencing microfinance success.</li>
+          <li>Trend identification to analyze historical shifts in microfinance practices.</li>
+          <li>Policy recommendations based on data analysis.</li>
+        </ul>
+      </div>
 
-        <div id="featured-research" class="sub-tab-content">
-            <h3>Featured Research Projects</h3>
-            <ul>
-                <li>
-                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Implications of Monetary Policy on Fiscal Policy</a></strong>: This analysis explores the interactions between monetary and fiscal policies...
-                </li>
-                <li>
-                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Comparative Analysis of Zimbabwe and Its Neighbors on Corruption and Governance</a></strong>: This research investigates the impact of governance and corruption on economic growth...
-                </li>
-            </ul>
-        </div>
+      <!-- Sub-tab: Featured Research -->
+      <div id="featured-research" class="sub-tab-content">
+        <h3>Featured Research Projects</h3>
+        <ul>
+          <li><strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Implications of Monetary Policy on Fiscal Policy</a></strong></li>
+          <li><strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Comparative Analysis of Zimbabwe and Its Neighbors</a></strong></li>
+        </ul>
+      </div>
 
-        <div id="independent-projects" class="sub-tab-content">
-            <h3>Featured Independent Projects</h3>
-            <ul>
-                <li>
-                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Comprehensive Analysis of Key Metrics</a></strong>: The dashboard aims to empower users by providing insightful visualizations that facilitate data exploration and analysis...
-                </li>
-                <li>
-                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Retail Sales Power BI Sample</a></strong>: This interactive Power BI dashboard provides a comprehensive overview of retail sales performance...
-                </li>
-                <li>
-                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Sum of Powers Final Project</a></strong>: A collaborative project focused on data analysis using Python collab notebooks...
-                </li>
-                <li>
-                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Strategic Approaches to Limiting State Power</a></strong>: This theoretical exploration examines mechanisms to limit state power...
-                </li>
-                <li>
-                    <strong><a href="https://emmanuelameri.github.io/github.io/projects.html">An Interactive Story Map on Sámi Culture</a></strong>: This engaging story map illustrates key themes and insights related to Sámi culture...
-                </li>
-            </ul>
-        </div>
-    </main>
+      <!-- Sub-tab: Independent Projects -->
+      <div id="independent-projects" class="sub-tab-content">
+        <h3>Featured Independent Projects</h3>
+        <ul>
+          <li><strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Comprehensive Analysis of Key Metrics</a></strong></li>
+          <li><strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Retail Sales Power BI Sample</a></strong></li>
+          <li><strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Sum of Powers Final Project</a></strong></li>
+          <li><strong><a href="https://emmanuelameri.github.io/github.io/projects.html">Strategic Approaches to Limiting State Power</a></strong></li>
+          <li><strong><a href="https://emmanuelameri.github.io/github.io/projects.html">An Interactive Story Map on Sámi Culture</a></strong></li>
+        </ul>
+      </div>
+    </div>
+  </main>
 
     <footer>
         <p>"The best way to predict the future is to create it." — Peter Drucker</p>
