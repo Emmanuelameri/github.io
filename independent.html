@@ -1,120 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emmanuel Ameri - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: 'Georgia', serif;
-      margin: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Ameri - Featured Independent Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
 
-    header {
-      background-color: #004d00;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+        header {
+            background-color: #004d00;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-    }
+        nav {
+            margin: 20px 0;
+        }
 
-    nav li {
-      margin-right: 20px;
-    }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
 
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
+        .tab-content {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
 
-    .sub-tabs {
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-      gap: 10px;
-    }
+        .intext-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
 
-    .sub-tabs button {
-      background-color: #004d00;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .sub-tabs button:hover {
-      background-color: #005700;
-    }
-
-    .tab-content, .sub-tab-content {
-      display: none;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 800px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #7f8c8d;
-      padding: 20px;
-      background-color: #eaeaea;
-    }
-
-    .banner-image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-  </style>
-
-  <script>
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => tab.style.display = 'none');
-      document.getElementById(tabId).style.display = 'block';
-    }
-
-    function showSubTab(subTabId) {
-      const subTabs = document.querySelectorAll('.sub-tab-content');
-      subTabs.forEach(subTab => subTab.style.display = 'none');
-      document.getElementById(subTabId).style.display = 'block';
-    }
-
-    window.onload = function () {
-      showTab('home');
-      showSubTab('current-projects'); // show first sub-tab by default
-    };
-  </script>
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            padding: 20px;
+            background-color: #eaeaea;
+        }
+    </style>
 </head>
-<body onload="showTab('home')">
+<body>
     <header>
         <h1>Emmanuel Ameri</h1>
         <p>Featured Independent Projects</p>
