@@ -63,6 +63,19 @@
             background-color: #eaeaea;
         }
     </style>
+    <script>
+
+    function showSubTab(subTabId) {
+      const subTabs = document.querySelectorAll('.sub-tab-content');
+      subTabs.forEach(subTab => subTab.style.display = 'none');
+      document.getElementById(subTabId).style.display = 'block';
+    }
+
+    window.onload = function () {
+      showTab('home');
+      showSubTab('current-projects'); // show first sub-tab by default
+    };
+  </script>
 </head>
 <body>
     <header>
